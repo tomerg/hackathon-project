@@ -17,15 +17,18 @@ dotenv.load();
 
 // Models
 var User = require('./models/User');
+var Transaction = require('./models/Transaction');
 
 // Controllers
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
+var transactionController = require('./controllers/transaction');
 
 var app = express();
 
+mongoose.connect('mongodb://localhost/wirecash');
 
-mongoose.connect(process.env.MONGODB);
+// mongoose.connect(process.env.MONGODB || 'mongodb://localhost/wirecash');
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
@@ -71,6 +74,9 @@ app.post('/reset/:token', userController.resetPost);
 app.get('/unlink/:provider', userController.ensureAuthenticated, userController.unlink);
 app.post('/auth/facebook', userController.authFacebook);
 app.get('/auth/facebook/callback', userController.authFacebookCallback);
+app.post('/transaction', transactionController.transactionPost);
+app.get('/transaction/:user', transactionController.transactionGet);
+// app.get('/admin', adminController.adminGet);
 
 app.get('*', function(req, res) {
   res.redirect('/#' + req.originalUrl);

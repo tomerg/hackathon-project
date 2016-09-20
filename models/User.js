@@ -20,9 +20,10 @@ var userSchema = new mongoose.Schema({
   website: String,
   picture: String,
   facebook: String,
-  twitter: String,
-  google: String,
-  github: String,
+  transactions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Transaction' }],
+  // twitter: String,
+  // google: String,
+  // github: String,
   vk: String
 }, schemaOptions);
 

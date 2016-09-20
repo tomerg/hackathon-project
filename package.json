@@ -21,7 +21,8 @@
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.7",
     "nodemailer": "^2.3.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "ui-router": "^1.0.0-alpha.3"
   },
   "devDependencies": {},
   "engines": {

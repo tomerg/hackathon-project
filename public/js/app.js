@@ -5,11 +5,16 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
 
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home.html'
+        templateUrl: 'partials/home.html',
+        controller: 'TransactionCtrl'
       })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
         controller: 'ContactCtrl'
+      })
+      .when('/admin', {
+        templateUrl: 'partials/admin.html',
+        controller: 'AdminCtrl'
       })
       .when('/login', {
         templateUrl: 'partials/login.html',
