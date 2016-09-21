@@ -1,6 +1,7 @@
-(function() {
-angular.module('MyApp', ['ngRoute', 'satellizer'])
-  .config(function($routeProvider, $locationProvider, $authProvider) {
+var app = angular.module('MyApp', ['ngRoute', 'satellizer', 'chart.js']);
+
+app.config(['$routeProvider', '$locationProvider', '$authProvider', function($routeProvider, $locationProvider, $authProvider) {
+
     $locationProvider.html5Mode(true);
 
     $routeProvider
@@ -14,7 +15,7 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
       })
       .when('/admin', {
         templateUrl: 'partials/admin.html',
-        controller: 'AdminCtrl'
+        controller: 'LineCtrl'
       })
       .when('/login', {
         templateUrl: 'partials/login.html',
@@ -64,10 +65,13 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
         $location.path('/login');
       }
     }
-  })
-  .run(function($rootScope, $window) {
+
+  }
+ ]);
+  
+  app.run(function($rootScope, $window) {
     if ($window.localStorage.user) {
       $rootScope.currentUser = JSON.parse($window.localStorage.user);
     }
   });
-})();
+
