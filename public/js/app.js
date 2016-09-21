@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ngRoute', 'satellizer', 'chart.js']);
+var app = angular.module('MyApp', ['ngRoute', 'satellizer']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function($routeProvider, $locationProvider, $authProvider) {
 
@@ -16,6 +16,15 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function($ro
       .when('/admin', {
         templateUrl: 'partials/admin.html',
         controller: 'LineCtrl'
+      })
+      .when('/activity', {
+        templateUrl: 'partials/activity.html',
+        controller: 'ActivityCtrl',
+        resolve: {
+         postPromise: ['Activity', function(Activity){
+         return Activity.getAll();
+         }]
+       }
       })
       .when('/login', {
         templateUrl: 'partials/login.html',

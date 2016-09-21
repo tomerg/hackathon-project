@@ -23,6 +23,7 @@ var Transaction = require('./models/Transaction');
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
 var transactionController = require('./controllers/transaction');
+var activityController = require('./controllers/activity');
 
 var app = express();
 
@@ -76,6 +77,7 @@ app.post('/auth/facebook', userController.authFacebook);
 app.get('/auth/facebook/callback', userController.authFacebookCallback);
 app.post('/transaction', transactionController.transactionPost);
 app.get('/transaction/:user', transactionController.transactionGet);
+app.get('/transaction', activityController.activityGet);
 // app.get('/admin', adminController.adminGet);
 
 app.get('*', function(req, res) {

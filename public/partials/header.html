@@ -15,6 +15,7 @@
         <li ng-class="{ active: isActive('/contact')}"><a href="/contact">Contact</a></li>
       </ul>
       <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right">
+      <li ng-class="{ active: isActive('/activity')}"><a href="/activity">Activity</a></li>
         <li ng-class="{ active: isActive('/admin')}"><a href="/admin">Admin</a></li>
         <li class="dropdown">
           <a href="#" data-toggle="dropdown" class="navbar-avatar dropdown-toggle">
