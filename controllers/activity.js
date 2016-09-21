@@ -10,15 +10,17 @@ var express = require('express');
 var router = express.Router();
 
 var User = require('../models/User');
-var Transaction = require('../models/Transaction');
+// var Transaction = require('../models/Transaction');
+var Trans = require('../models/Trans');
 
 
 exports.activityGet = function(req, res, next) {
-
- Transaction.find(function(err, transaction){
+console.log("Im in the router");
+console.log(req);
+ Trans.find(function(err, trans){
    if(err){ return next(err); }
 
-   res.json(transaction);
+   res.json(trans);
  });
 
 

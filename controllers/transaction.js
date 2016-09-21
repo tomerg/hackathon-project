@@ -52,6 +52,14 @@ exports.transactionPost = function(req, res, next) {
 
 exports.transactionGet = function(req, res, next) {
 
+  // res.json(req.user);
+
+  req.user.populate('transactions', function(err, user) {
+    if (err) { return next(err); }
+
+    res.json(req.user);
+  });
+
   // User.findById(req.user.id, function(err, user) {
   //   return (req.params.user) 
   //     req.user.populate('transactions', function(err, user) {

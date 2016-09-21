@@ -1,11 +1,12 @@
 app.factory('Activity', ['$http', function($http) {
   var activityService = {
-    activity: [],
+    trans: [],
 
     getAll: function() {
-      return $http.get('/transaction').then(function(data) {
+      console.log("Im in the service");
+      return $http.get('/trans').then(function(data) {
   
-        angular.copy(data.data, activityService.activity);
+        angular.copy(data.data, activityService.trans);
       });
     },
 

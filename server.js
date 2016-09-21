@@ -18,6 +18,7 @@ dotenv.load();
 // Models
 var User = require('./models/User');
 var Transaction = require('./models/Transaction');
+var Trans = require('./models/Transaction');
 
 // Controllers
 var userController = require('./controllers/user');
@@ -65,6 +66,30 @@ app.use(function(req, res, next) {
   }
 });
 
+app.param('user', function(req, res, next, id) {
+ var query = User.findById(id);
+
+ query.exec(function (err, user){
+   if (err) { return next(err); }
+   if (!user) { return next(new Error('can\'t find user')); }
+
+   req.user = user;
+   return next();
+ });
+});
+
+app.param('transaction', function(req, res, next, id) {
+ var query = Transactions.findById(id);
+
+ query.exec(function (err, transactions){
+   if (err) { return next(err); }
+   if (!transaction) { return next(new Error('can\'t find transactions')); }
+
+   req.transaction = transaction;
+   return next();
+ });
+});
+
 app.post('/contact', contactController.contactPost);
 app.put('/account', userController.ensureAuthenticated, userController.accountPut);
 app.delete('/account', userController.ensureAuthenticated, userController.accountDelete);
@@ -77,7 +102,7 @@ app.post('/auth/facebook', userController.authFacebook);
 app.get('/auth/facebook/callback', userController.authFacebookCallback);
 app.post('/transaction', transactionController.transactionPost);
 app.get('/transaction/:user', transactionController.transactionGet);
-app.get('/transaction', activityController.activityGet);
+app.get('/trans', activityController.activityGet);
 // app.get('/admin', adminController.adminGet);
 
 app.get('*', function(req, res) {
