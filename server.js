@@ -104,6 +104,7 @@ app.post('/transaction', transactionController.transactionPost);
 app.get('/transaction/:user', transactionController.transactionGet);
 app.get('/trans', activityController.activityGet);
 // app.get('/admin', adminController.adminGet);
+// app.get('/transaction/:user', transactionController.transactionGet, transactionController.transAmtGet);
 
 app.get('*', function(req, res) {
   res.redirect('/#' + req.originalUrl);

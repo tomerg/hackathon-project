@@ -52,28 +52,51 @@ exports.transactionPost = function(req, res, next) {
 
 exports.transactionGet = function(req, res, next) {
 
-  // res.json(req.user);
-
   req.user.populate('transactions', function(err, user) {
     if (err) { return next(err); }
 
     res.json(req.user);
   });
 
-  // User.findById(req.user.id, function(err, user) {
-  //   return (req.params.user) 
-  //     req.user.populate('transactions', function(err, user) {
-  //       if (err) { return next(err); }
+// Find all transactions then loop through all transactions and create a new object with the 
+ // only the amount property and send it back to the client
+ //Transaction.find({}).exec(function(err, data){
+  // var resObj = []
+//  for(var i = 0; i < data.length; i ++){
+    // var newObj = {data: data[i].amount}
+    // resObj.push(newObj)
 
-  //       res.json(user);
-  //     });
-    
-  // });
-
-  // req.user.populate('transactions', function(err, user) {
-  //   if (err) { return next(err); }
-
-  //   res.json(user);
-  // });
+// }
+  // res.json(resObj)
+ // })
+// }
 
 };
+
+
+exports.transAmtGet = function(req, res, next) {
+
+  Transaction.find('amount', function(err, transaction){
+    if (err) {return handleError(err)};
+    
+    console.log(transaction)
+    // console.log('Transaction Amount', transaction[0].amount);
+    // for (var i = 0 ; i < transaction.length ; i++){
+    //   console.log("this shit", i)
+    //   res.json(transaction[i].amount)
+    // }
+    
+
+  });
+
+  // req.user.populate('transactions').populate('amount').exec(function(err, amount){
+  //   if (err) { return next(err); }
+  //   console.log(amount);
+  //   res.json(amount);
+  //   // res.send(amount);
+  // })
+
+};
+
+
+
