@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="156px" height="124px" viewBox="0 0 156 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>speed</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-1042.000000, -680.000000)">
+            <g id="3-Icon-Section" transform="translate(178.000000, 681.000000)">
+                <g id="Time-Icon" transform="translate(813.000000, 0.000000)">
+                    <g id="speed" transform="translate(52.906977, 0.000000)">
+                        <g id="Layer_1">
+                            <ellipse id="Oval" fill="#C9C9C9" cx="72.3900003" cy="74.3900003" rx="8.89000034" ry="8.89000034"></ellipse>
+                            <polygon id="Shape" fill="#C9C9C9" points="101.970001 44.8055556 80.174118 77.0255568 69.75 66.6014387"></polygon>
+                            <path d="M138.194444,121.527778 C147.222222,109.027778 152.777778,93.0555556 152.777778,76.3888889 C152.777778,34.0277778 118.75,0 76.3888889,0 C34.0277778,0 0,34.0277778 0,76.3888889 C0,93.0555556 5.55555556,109.027778 14.5833333,121.527778" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                            <path d="M76.3888889,0 L76.3888889,13.8888889" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                            <path d="M152.777778,76.3888889 L138.888889,76.3888889" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                            <path d="M13.8888889,76.3888889 L0,76.3888889" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                            <path d="M130.555556,22.2222222 L120.833333,31.9444444" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                            <path d="M31.9444444,31.9444444 L22.2222222,22.2222222" id="Shape" stroke="#00B9FF" stroke-width="2"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

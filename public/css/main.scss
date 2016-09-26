@@ -1,6 +1,7 @@
 $body-bg: #f4f4f4;
 $line-height-base: 1.57142857;
-$link-color: #1d7cf4;
+// $link-color: #1d7cf4;
+$link-color: #92A8B4;
 $link-hover-decoration: none;
 
 $brand-success: #29b35b;
@@ -18,16 +19,20 @@ $alert-danger-text: #b61b17;
 $alert-danger-bg: #ffcdd2;
 
 $navbar-height: 56px;
-$navbar-default-bg: #fff;
+// $navbar-default-bg: #fff;
+$navbar-default-bg: #222F48;
 $navbar-default-border: #e0e0e0;
 $navbar-default-color: #757575;
-$navbar-default-link-color: #262626;
+$navbar-default-link-color: #fff;
 $navbar-default-link-hover-bg: transparent;
 $navbar-default-link-active-bg: transparent;
-$navbar-default-link-active-color: #262626;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-active-color: #fff;
 
 $panel-heading-padding: 20px 30px;
 $panel-body-padding: 30px;
+
+$margin-right: 15px;
 
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CRaleway:100,300,600,700,800");
 @import "vendor/bootstrap";
@@ -69,11 +74,12 @@ footer {
 // -------------------------
 
 .navbar-default .navbar-nav > li > a {
+  color: $link-color;
   border-bottom: 3px solid transparent;
   padding-bottom: ($navbar-padding-vertical - 3);
   transition: all 0.25s;
   &:hover {
-    border-bottom-color: #bdbdbd;
+    border-bottom-color: #27E4FD;
   }
   &.navbar-avatar {
     padding-top: $navbar-padding-vertical - 4.5;
@@ -87,7 +93,33 @@ footer {
 }
 
 .navbar-default .navbar-nav > li.active > a {
-  border-bottom-color: #3f51b5;
+  border-bottom-color: #27E4FD;
+}
+
+.sidenav-icon li i{
+  margin-right: $margin-right;
+}
+
+.side-bar {
+  background-color: #37455E; 
+  height: 850px; 
+  padding: 0px;
+  a{
+    padding: 15px 0 15px 25px !important;
+  }
+}
+
+.navi .active a {
+    background: #222F48;
+    border-left: 3px solid #27E4FD;
+    // padding-left: 25px;
+}
+
+.navi a:hover {
+    background: #222F48 none repeat scroll 0 0;
+    border-left: 3px solid #27E4FD;
+    display: block;
+    // padding-left: 15px;
 }
 
 // Panels
@@ -250,3 +282,207 @@ textarea {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
+// Timeline
+// 
+
+.message-item {
+margin-bottom: 25px;
+margin-left: 40px;
+position: relative;
+}
+.message-item .message-inner {
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 3px;
+padding: 10px;
+position: relative;
+}
+.message-item .message-inner:before {
+border-right: 10px solid #ddd;
+border-style: solid;
+border-width: 10px;
+color: rgba(0,0,0,0);
+content: "";
+display: block;
+height: 0;
+position: absolute;
+left: -20px;
+top: 6px;
+width: 0;
+}
+.message-item .message-inner:after {
+border-right: 10px solid #fff;
+border-style: solid;
+border-width: 10px;
+color: rgba(0,0,0,0);
+content: "";
+display: block;
+height: 0;
+position: absolute;
+left: -18px;
+top: 6px;
+width: 0;
+}
+.message-item:before {
+background: #fff;
+border-radius: 2px;
+bottom: -30px;
+box-shadow: 0 0 3px rgba(0,0,0,0.2);
+content: "";
+height: 100%;
+left: -30px;
+position: absolute;
+width: 3px;
+}
+.message-item:after {
+background: #fff;
+border: 2px solid #ccc;
+border-radius: 50%;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+content: "";
+height: 15px;
+left: -36px;
+position: absolute;
+top: 10px;
+width: 15px;
+}
+.clearfix:before, .clearfix:after {
+content: " ";
+display: table;
+}
+.message-item .message-head {
+border-bottom: 1px solid #eee;
+margin-bottom: 8px;
+padding-bottom: 8px;
+}
+.message-item .message-head .avatar {
+margin-right: 20px;
+}
+.message-item .message-head .user-detail {
+overflow: hidden;
+}
+.message-item .message-head .user-detail h5 {
+font-size: 16px;
+font-weight: bold;
+margin: 0;
+}
+.message-item .message-head .post-meta {
+float: left;
+padding: 0 15px 0 0;
+}
+.message-item .message-head .post-meta >div {
+color: #333;
+font-weight: bold;
+text-align: right;
+}
+.post-meta > div {
+color: #777;
+font-size: 12px;
+line-height: 22px;
+}
+.message-item .message-head .post-meta >div {
+color: #333;
+font-weight: bold;
+text-align: right;
+}
+.post-meta > div {
+color: #777;
+font-size: 12px;
+line-height: 22px;
+}
+.img-time {
+ min-height: 40px;
+ max-height: 40px;
+}
+
+// Customer Widget
+
+.media{
+    /*box-shadow:0px 0px 4px -2px #000;*/
+    margin: 20px 0;
+    padding:30px;
+}
+.dp{
+    border:10px solid #eee;
+    transition: all 0.2s ease-in-out;
+}
+.dp:hover{
+    border:2px solid #eee;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);  
+    -webkit-transform:rotate(360deg);  
+    /*-webkit-font-smoothing:antialiased;*/
+}
+
+// Landing page
+
+header {
+  background: linear-gradient(
+      rgba(14, 118, 188, 0.60), 
+      rgba(14, 118, 188, 0.60)
+    ),url('wirecash-bg.jpeg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 350px;
+  margin-bottom: 30px;
+//   width:100%;
+//   padding: 0;
+//   .widewrapper > img {
+//   width:100%;
+// }
+}
+
+.intro-lead-in {
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  height: 50px;
+  text-align: center;
+  text-size-adjust: 100%;
+  width: 1140px;
+  column-rule-color: rgb(255, 255, 255);
+  perspective-origin: 570px 20px;
+  transform-origin: 570px 20px;
+  border: 0px none rgb(255, 255, 255);
+  font: normal normal normal 50px / 50px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    // font: italic normal normal normal 40px / 40px "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 50px 0px 25px 35px;
+  outline: rgb(255, 255, 255) none 0px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.intro-heading {
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  height: 35px;
+  text-align: center;
+  text-size-adjust: 100%;
+  // text-transform: uppercase;
+  width: 1140px;
+  column-rule-color: rgb(255, 255, 255);
+  perspective-origin: 570px 37.5px;
+  transform-origin: 570px 37.5px;
+  border: 0px none rgb(255, 255, 255);
+  font: normal normal normal 35px / 35px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px 0px 50px;
+  outline: rgb(255, 255, 255) none 0px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.product .img-responsive {
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.product-text {
+    font: normal normal normal 25px / 25px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 25px;
+    color: #829CA9;
+    line-height: 40px;
+}
+
+
+
+

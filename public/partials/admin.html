@@ -1,34 +1,184 @@
-<div class="container">
-  <div class="panel">
-    <div class="panel-heading">
-      <h3 class="panel-title">Admin Charts</h3>
-    </div>
-    <div class="panel-body">
-    
-    <h1 class="text-center">Money Transfer Volume</h1>
-    <div>
-      <canvas class="chart chart-line" chart-data="data" chart-labels="labels" 
-      chart-series="series" chart-click="onClick"></canvas> 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 side-bar">
+          <ul class="nav sidenav-icon navi">
+            <li class="active"><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Overview<span class="sr-only">(current)</span></a></li>
+            <li><a href="#"><i class="fa fa-users" aria-hidden="true" class="sidenav-icon"></i>Customers</a></li>
+            <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i>Notifications</a></li>
+            <li><a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i>Reports</a></li>
+            <li><a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i>Analytics</a></li>
+            <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>Permissions</a></li>
+            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-8 col-md-9 main" style="margin: 20px 0 0 20px; width: 80%;">
+
+          <div class="row">
+
+            <div class="col-md-8">
+              <div class="panel" style="background-color: #37455E">
+                <div class="panel-heading">
+                  <h3 class="panel-title" style="color: #92A8B4">Admin Charts</h3>
+                </div>
+                <div class="panel-body">
+                
+<!--                   <h1 class="text-center">Money Transfer Volume</h1> -->
+                  <div>
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" 
+                    chart-series="series" chart-click="onClick"></canvas> 
+                  </div>
+
+  <!--               <div>
+                <canvas id="bar" class="chart chart-bar"
+                  chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+                </div>-->
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Recent Activity</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="qa-message-list" id="wallmessages">
+                          <div class="message-item" id="m16">
+                          <div class="message-inner">
+                            <div class="message-head clearfix">
+                              <div class="avatar pull-left"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="img-time"></a></div>
+                              <div class="user-detail">
+                                <h5 class="handle">Oleg Kolesnichenko</h5>
+                                <div class="post-meta">
+                                  <div class="asker-meta">
+                                    <span class="qa-message-what"></span>
+                                    <span class="qa-message-when">
+                                      <span class="qa-message-when-data">Jan 21</span>
+                                    </span>
+                                    <span class="qa-message-who">
+                                      <span class="qa-message-who-pad">by </span>
+                                      <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko">Oleg Kolesnichenko</a></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="qa-message-content">
+                              Yo!
+                            </div>
+                        </div></div>
+                        
+                        <div class="message-item" id="m1">
+                          <div class="message-inner">
+                            <div class="message-head clearfix">
+                              <div class="avatar pull-left"><a href="./index.php?qa=user&qa_1=admin"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="img-time"></a></div>
+                              <div class="user-detail">
+                                <h5 class="handle">admin</h5>
+                                <div class="post-meta">
+                                  <div class="asker-meta">
+                                    <span class="qa-message-what"></span>
+                                    <span class="qa-message-when">
+                                      <span class="qa-message-when-data">Oct 24, 2013</span>
+                                    </span>
+                                    <span class="qa-message-who">
+                                      <span class="qa-message-who-pad">by </span>
+                                      <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=admin">admin</a></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="qa-message-content">
+                              Nunc ante neque
+                            </div>
+                        </div></div>
+                        
+                      </div>
+                </div>
+              </div>
+            </div>
+
+          </div> 
+          <!-- End Row -->
+
+          <div class="row">
+
+            <div class="col-md-8">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Admin Charts</h3>
+                </div>
+                <div class="panel-body">
+                
+<!--                   <h1 class="text-center">Money Transfer Volume</h1> -->
+ <!--                  <div>
+                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" 
+                    chart-series="series" chart-click="onClick"></canvas> 
+                  </div> -->
+
+                 <div>
+                <canvas id="bar" class="chart chart-bar"
+                  chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+                </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Recent Customers</h3>
+                </div>
+                <div class="panel-body" style="padding: 15px;">
+                  <div class="media-list">
+                    <a class="pull-left" href="#">
+                        <img class="media-object dp img-circle" src="https://organicthemes.com/demo/profile/files/2012/12/profile_img.png" style="width: 100px;height:100px;">
+                    </a>
+                    <div class="media-body" style="padding: 15px;">
+                        <h4 class="media-heading">Jonh Smith <small> Country: India</small></h4>
+                        <hr style="margin:8px auto">
+
+                        <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                          $500
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="media-list">
+                    <a class="pull-left" href="#">
+                        <img class="media-object dp img-circle" src="http://www.caretofun.net/wp-content/uploads/2015/07/beautiful-girl-profile-caretofun.net-5.jpg" style="width: 100px;height:100px;">
+                    </a>
+                    <div class="media-body" style="padding: 15px;">
+                        <h4 class="media-heading">Sara Lee <small> Country: Mexico</small></h4>
+                        <hr style="margin:8px auto">
+
+                        <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                          $200
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> 
+          <!-- End Row -->
+
+
+        </div>
+      </div>
+      <!-- End Row -->
     </div>
 
-    <div>
-    <canvas id="bar" class="chart chart-bar"
-      chart-data="data" chart-labels="labels" chart-series="series"></canvas>
-    </div>
 
-    <div>
-      <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas> 
-    </div>
 
-    <div>
-      <canvas id="base" class="chart-bar"
-        chart-data="data" chart-labels="labels" chart-colors="colors"
-        chart-dataset-override="datasetOverride" >
-      </canvas> 
-    </div>
 
-    <!-- <nvd3 options="options" data="data"></nvd3> -->
 
-    </div>
-  </div>
-</div>
+
+

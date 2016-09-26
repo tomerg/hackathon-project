@@ -8,9 +8,11 @@ function TransactionCtrl($scope, Transaction) {
     // var ctrl = this;
     $scope.sendTransForm = sendTransForm;
 
+    $scope.recentTran = Transaction.posts;
+
     function sendTransForm() {
         Transaction.send($scope.transaction)
-            .then(function(response) {
+            .then(function(response, trans) {
                 $scope.messages = {
                     success: [response.data]
                     // success: "Transaction success"

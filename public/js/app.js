@@ -9,13 +9,29 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function($ro
         templateUrl: 'partials/home.html',
         controller: 'TransactionCtrl'
       })
+      .when('/send-money', {
+        templateUrl: 'partials/send-money.html',
+        controller: 'TransactionCtrl',
+        resolve: {
+        postPromise: ['Activity', function(Activity){
+          var currUserId = JSON.parse(localStorage.user)._id;
+          return Activity.get(currUserId);
+         }]
+       }
+      })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
         controller: 'ContactCtrl'
       })
       .when('/admin', {
         templateUrl: 'partials/admin.html',
-        controller: 'AdminCtrl'
+        controller: 'AdminCtrl',
+        resolve: {
+        postPromise: ['Admin', function(Admin){
+          var currUserId = JSON.parse(localStorage.user)._id;
+          return Admin.get(currUserId);
+         }]
+       }
       })
       .when('/activity', {
         templateUrl: 'partials/activity.html',
@@ -59,7 +75,7 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function($ro
     $authProvider.signupUrl = '/signup';
     $authProvider.facebook({
       url: '/auth/facebook',
-      clientId: '980220002068787',
+      clientId: '125373027923412',
       redirectUri: 'http://localhost:3000/auth/facebook/callback'
     });
 

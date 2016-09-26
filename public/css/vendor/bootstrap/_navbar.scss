@@ -11,8 +11,8 @@
 .navbar {
   position: relative;
   min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom: $navbar-margin-bottom;
-  border: 1px solid transparent;
+  // margin-bottom: $navbar-margin-bottom;
+  // border: 1px solid transparent;
 
   // Prevent floats from breaking the navbar
   @include clearfix;
@@ -166,6 +166,9 @@
   font-size: $font-size-large;
   line-height: $line-height-computed;
   height: $navbar-height;
+  margin-right: 40px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
   &:hover,
   &:focus {
@@ -417,7 +420,8 @@
 
       &:hover,
       &:focus {
-        color: $navbar-default-link-hover-color;
+        // color: $navbar-default-link-hover-color;
+        color: #37455E;
         background-color: $navbar-default-link-hover-bg;
       }
     }
