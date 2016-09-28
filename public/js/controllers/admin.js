@@ -6,12 +6,12 @@ AdminCtrl.$inject = ['$scope', 'Admin'];
 
 function AdminCtrl($scope, Admin) {
     $scope.colors = [{
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointHoverBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(113, 151, 214, 0.2)',
+      pointBackgroundColor: 'rgba(113, 151, 214,1)',
+      pointHoverBackgroundColor: 'rgba(113, 151, 214,1)',
       borderColor: 'rgb(255, 125, 101)',
       pointBorderColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+      pointHoverBorderColor: 'rgb(51, 181, 204)'
   }];
   // $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"];
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
