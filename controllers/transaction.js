@@ -22,9 +22,10 @@ exports.transactionPost = function(req, res, next) {
     payment: req.body.payment
   });
 
-  transaction.save(function (err, trans){
+  transaction.save(function (err, user){
     if(err){ return next(err); }
-    res.json(trans);
+    // res.json(trans);
+    res.send({ user: user, msg: 'Transaction sent successfully!' });
   });
 
   req.user.transactions.push(transaction);
@@ -40,7 +41,8 @@ exports.transactionGet = function(req, res, next) {
   req.user.populate('transactions', function(err, user) {
     if (err) { return next(err); }
     // console.log("I got the user", req.user.id);
-    // console.log(req.user);
+    // console.log(user);
+
     res.json(req.user);
   });
 

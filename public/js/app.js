@@ -33,6 +33,20 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function($ro
          }]
        }
       })
+      .when('/customers', {
+        templateUrl: 'partials/customers.html',
+        controller: 'AdminCtrl',
+        resolve: {
+        postPromise: ['Admin', function(Admin){
+          var currUserId = JSON.parse(localStorage.user)._id;
+          return Admin.get(currUserId);
+         }]
+       }
+      })
+      .when('/analytics', {
+        templateUrl: 'partials/analytics.html',
+        controller: 'AnalyticsCtrl'
+      })
       .when('/activity', {
         templateUrl: 'partials/activity.html',
         controller: 'ActivityCtrl',

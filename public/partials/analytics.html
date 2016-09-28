@@ -1,0 +1,104 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 side-bar">
+          <ul class="nav sidenav-icon navi">
+            <li ng-class="{ active: isActive('/admin')}"><a href="/admin"><i class="fa fa-bar-chart" aria-hidden="true"></i>Overview<!-- <span class="sr-only">(current)</span> --></a></li>
+            <li ng-class="{ active: isActive('/customers')}" ><a href="/customers"><i class="fa fa-users" aria-hidden="true" class="sidenav-icon"></i>Customers</a></li>
+            <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i>Notifications</a></li>
+            <li><a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i>Reports</a></li>
+            <li ng-class="{ active: isActive('/customers')}" class="active"><a href="/analytics"><i class="fa fa-line-chart" aria-hidden="true"></i>Analytics</a></li>
+            <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>Permissions</a></li>
+            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-8 col-md-9 main" style="margin: 20px 0 0 20px; width: 80%;">
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="panel" style="background-color: #222F48">
+                <div class="panel-heading">
+                  <h3 class="panel-title" style="color: #fff">Money Transfer Volume Per Region</h3>
+                </div>
+                <div class="panel-body">
+
+                  <div ng-controller="BubbleCtrl">
+                  <canvas class="chart chart-bubble" chart-data="data"
+                  chart-colors="colors" chart-options="options"></canvas>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="panel" style="background-color: #222F48">
+                <div class="panel-heading">
+                  <h3 class="panel-title" style="color: #fff">Type of Transfer</h3>
+                </div>
+                <div class="panel-body">
+
+                  <div>
+                  <canvas class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="colors" chart-dataset-override="datasetOverride2">
+                  </canvas>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div> 
+          <!-- End Row -->
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="panel" style="background-color: #222F48">
+                <div class="panel-heading">
+                  <h3 class="panel-title" style="color: #fff">Volume of Transfers Per Week</h3>
+                </div>
+                <div class="panel-body">
+
+                  <div ng-controller="MixedCtrl">
+                    <canvas id="base" class="chart-bar"
+                      chart-data="data" chart-labels="labels" chart-colors="colors"
+                      chart-dataset-override="datasetOverride" >
+                    </canvas> 
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="panel" style="background-color: #222F48">
+                <div class="panel-heading">
+                  <h3 class="panel-title" style="color: #fff">Demographics</h3>
+                </div>
+                <div class="panel-body">
+
+                  <div ng-controller="RadarCtrl">
+                    <canvas id="radar" class="chart chart-radar"
+                      chart-data="data" chart-options="options" chart-labels="labels">
+                    </canvas> 
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div> 
+          <!-- End Row -->
+
+
+        </div>
+      </div>
+      <!-- End Row -->
+    </div>
+
+
+
+
+
+
+

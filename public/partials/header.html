@@ -20,7 +20,7 @@
         <li ng-class="{ active: isActive('/admin')}"><a href="/admin">Admin</a></li>
         <li class="dropdown">
           <a href="#" data-toggle="dropdown" class="navbar-avatar dropdown-toggle">
-            <img ng-src="{{currentUser.picture || currentUser.gravatar}}"> {{currentUser.name || currentUser.email || currentUser.id}} <i class="caret"></i>
+            <img style="z-index: 1000;" ng-src="{{currentUser.picture || currentUser.gravatar}}"> {{currentUser.name || currentUser.email || currentUser.id}} <i class="caret"></i>
           </a>
           <ul class="dropdown-menu">
             <li><a href="/account">My Account</a></li>

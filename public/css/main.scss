@@ -7,7 +7,7 @@ $link-hover-decoration: none;
 $brand-success: #29b35b;
 $brand-danger: #b61b17;
 
-$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight: 600;
 
 $alert-info-border: #31708f;
@@ -43,6 +43,7 @@ $margin-right: 15px;
 html {
   position: relative;
   min-height: 100%;
+  letter-spacing: .5px;
 }
 
 body {
@@ -283,89 +284,106 @@ textarea {
   text-transform: uppercase;
 }
 
-// Timeline
+// 
+// Admin Panel
 // 
 
+// Recent Activity
+
+.panel-activity {
+  background-color: #222F48;
+  h3 {
+    color: #fff;
+  }
+  a {
+    font-size: 12px;
+    color: #72848B;
+    font-weight: normal;
+  }
+
+}
+
 .message-item {
-margin-bottom: 25px;
+margin-bottom: 10px;
 margin-left: 40px;
 position: relative;
 }
 .message-item .message-inner {
-background: #fff;
-border: 1px solid #ddd;
-border-radius: 3px;
-padding: 10px;
+// background: #fff;
+// border: 1px solid #ddd;
+// border-radius: 3px;
+padding: 10px 5px 10px 0;
 position: relative;
 }
-.message-item .message-inner:before {
-border-right: 10px solid #ddd;
-border-style: solid;
-border-width: 10px;
-color: rgba(0,0,0,0);
-content: "";
-display: block;
-height: 0;
-position: absolute;
-left: -20px;
-top: 6px;
-width: 0;
-}
-.message-item .message-inner:after {
-border-right: 10px solid #fff;
-border-style: solid;
-border-width: 10px;
-color: rgba(0,0,0,0);
-content: "";
-display: block;
-height: 0;
-position: absolute;
-left: -18px;
-top: 6px;
-width: 0;
-}
+// .message-item .message-inner:before {
+// border-right: 10px solid #ddd;
+// border-style: solid;
+// border-width: 10px;
+// color: rgba(0,0,0,0);
+// content: "";
+// display: block;
+// height: 0;
+// position: absolute;
+// left: -20px;
+// top: 6px;
+// width: 0;
+// }
+// .message-item .message-inner:after {
+// border-right: 10px solid #fff;
+// border-style: solid;
+// border-width: 10px;
+// color: rgba(0,0,0,0);
+// content: "";
+// display: block;
+// height: 0;
+// position: absolute;
+// left: -18px;
+// top: 6px;
+// width: 0;
+// }
 .message-item:before {
-background: #fff;
+background: #37455E;
 border-radius: 2px;
-bottom: -30px;
+bottom: -15px;
 box-shadow: 0 0 3px rgba(0,0,0,0.2);
 content: "";
-height: 100%;
+height: 70%;
 left: -30px;
 position: absolute;
 width: 3px;
 }
 .message-item:after {
-background: #fff;
-border: 2px solid #ccc;
+// background: #fff;
+border: 2px solid #25CD6B;
 border-radius: 50%;
 box-shadow: 0 0 5px rgba(0,0,0,0.1);
 content: "";
-height: 15px;
+height: 14px;
 left: -36px;
 position: absolute;
-top: 10px;
-width: 15px;
+top: 15px;
+width: 14px;
 }
 .clearfix:before, .clearfix:after {
 content: " ";
 display: table;
 }
-.message-item .message-head {
-border-bottom: 1px solid #eee;
-margin-bottom: 8px;
-padding-bottom: 8px;
-}
+// .message-item .message-head {
+// border-bottom: 1px solid #eee;
+// margin-bottom: 8px;
+// padding-bottom: 8px;
+// }
 .message-item .message-head .avatar {
 margin-right: 20px;
 }
 .message-item .message-head .user-detail {
 overflow: hidden;
 }
-.message-item .message-head .user-detail h5 {
+.message-item .message-head .user-detail p {
 font-size: 16px;
-font-weight: bold;
+// font-weight: bold;
 margin: 0;
+color: #92A8B4;
 }
 .message-item .message-head .post-meta {
 float: left;
@@ -395,6 +413,20 @@ line-height: 22px;
  min-height: 40px;
  max-height: 40px;
 }
+.qa-message-content {
+  color: #5e7a87;
+  font-size: 13px;
+  width: 75%;
+  margin-top: 8px;
+}
+.label-date {
+  margin-left: 24px;
+  font-size: 12px;
+  background-color: #37455E;
+  color: #72848B;
+  font-weight: normal;
+  padding: .3em .6em;
+}
 
 // Customer Widget
 
@@ -404,7 +436,7 @@ line-height: 22px;
     padding:30px;
 }
 .dp{
-    border:10px solid #eee;
+    border: 4px solid #37455E;
     transition: all 0.2s ease-in-out;
 }
 .dp:hover{
@@ -414,6 +446,38 @@ line-height: 22px;
     -webkit-transform:rotate(360deg);  
     /*-webkit-font-smoothing:antialiased;*/
 }
+
+.cust-info {
+    font-size: 16px;
+    margin: 0;
+    color: #92A8B4;
+    font-weight: normal;
+    small {
+      color: #5e7a87;
+    }
+}
+.cust {
+  padding: 3px 15px 15px 15px;
+  hr {
+    margin:8px auto; 
+    border-top: 1px solid #37455E;
+  }
+  .progress {
+    background-color: #37455E; 
+    height: 16px;
+  }
+}
+
+.money-sent {
+  background-color: #58B74E;
+  line-height: 15px; 
+  font-size: 11px;
+}
+
+.cust-card {
+  padding: 15px 15px 5px 23px;
+}
+
 
 // Landing page
 
@@ -428,11 +492,6 @@ header {
   background-size: cover;
   height: 350px;
   margin-bottom: 30px;
-//   width:100%;
-//   padding: 0;
-//   .widewrapper > img {
-//   width:100%;
-// }
 }
 
 .intro-lead-in {
@@ -448,7 +507,7 @@ header {
   border: 0px none rgb(255, 255, 255);
   font: normal normal normal 50px / 50px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     // font: italic normal normal normal 40px / 40px "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 50px 0px 25px 35px;
+  margin: 60px 0px 25px 35px;
   outline: rgb(255, 255, 255) none 0px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -472,17 +531,32 @@ header {
 }
 
 .product .img-responsive {
-    margin: 0 auto;
-    margin-bottom: 25px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .product-text {
-    font: normal normal normal 25px / 25px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    height: 25px;
-    color: #829CA9;
-    line-height: 40px;
+  font: normal normal normal 25px / 25px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 25px;
+  color: #829CA9;
+  line-height: 40px;
+  letter-spacing: 1px;
 }
 
+// Send Money Page
 
+.send-box {
+  font-size: 25px; 
+  padding-bottom: 10px;
+}
 
+.form-fix {
+  label {
+    margin-top: 10px;
+  }
+}
+
+td {
+    padding: 25px 0;
+  }
 
