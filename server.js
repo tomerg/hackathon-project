@@ -28,9 +28,9 @@ var activityController = require('./controllers/activity');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/wirecash');
+// mongoose.connect('mongodb://localhost/wirecash');
 
-// mongoose.connect(process.env.MONGODB || 'mongodb://localhost/wirecash');
+mongoose.connect(process.env.MONGODB);
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
