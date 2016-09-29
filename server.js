@@ -30,7 +30,7 @@ var app = express();
 
 // mongoose.connect('mongodb://localhost/wirecash');
 
-mongoose.connect(process.env.MONGODB);
+mongoose.connect(process.env.MONGOLAB_IVORY_URI || 'mongodb://localhost/wirecash');
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
